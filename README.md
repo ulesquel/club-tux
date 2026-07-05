@@ -22,13 +22,13 @@ Para el manejo de base de datos, Web Sockets para la conexión en tiempo real de
 
 ### Resumen
 **Backend** (a mejorar):
-    - NodeJS
-    - C
+- NodeJS
+- C
 **Frontend**:
-    - React con Vite y TypeScript
-    - Phaser
+- React con Vite y TypeScript
+- Phaser
 **Base de datos**:
-    - Supabase (PostgreSQL, autenticación y WebSockets)
+- Supabase (PostgreSQL, autenticación y WebSockets)
 
 ## Autores
 - Francisco Pacheco Quevedo
