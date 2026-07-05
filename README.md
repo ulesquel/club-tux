@@ -1,33 +1,40 @@
-# Club Tux
-Un clon de **Club Penguin** pero con Tux!!
+# Club Tux 🐧
+¡¡Un clon de **Club Penguin** pero protagonizado por Tux!!
 
 ## Stack
 ### Frontend
-Utilizamos **Phraser**, un framework de Javascript con un motor preparado para crear juegos en 2D. Lo conformamos junto con **React** (con **Vite**) y **TypeScript**.
+El cliente está construido sobre **React** (utilizando **Vite** y **TypeScript**) para una gestión de interfaz rápida y tipada. El mundo del juego y las mecánicas 2D corren bajo **Phaser.js**, un potente framework/motor para juegos HTML5. Para los estilos de la interfaz de usuario (UI), utilizamos **Tailwind CSS**.
 
 ### Backend
-#### NodeJS (Express.js y Colyseus)
-Con Express.js se maqueta la parte de cuentas, autenticaciones y básicamente la gestión principal de los usuarios/jugadores de Club Tux. Luego con Colyseus se hace el manejo de rooms (las salas dentro de cada servidor)
-- Autenticación
-- Base de datos de usuarios
-- Web Sockets
-- Rooms (salas)
+#### Node.js (Express.js & Colyseus)
+* **Express.js:** Se encarga de la gestión principal de usuarios, la lógica de negocio central de las cuentas y la integración de servicios.
+* **Colyseus:** Maneja el estado del juego multijugador en tiempo real mediante WebSockets, gestionando las salas (rooms) de cada servidor, el movimiento de los personajes y la sincronización de estados.
 
-### Base de datos
+### Base de Datos
 #### Supabase
-Para el manejo de base de datos, Web Sockets para la conexión en tiempo real del juego y autenticación manejada a través de Express.js 
+Utilizado como BaaS (Backend as a Service) para la persistencia de datos (PostgreSQL) y el sistema de autenticación seguro, consumido e interactuado a través de nuestra API en Express.js.
 
 ### Resumen
-**Backend**:
-- NodeJS
-
-**Frontend**:
-- React con Vite y TypeScript
-- Phaser
-
-**Base de datos**:
-- Supabase (PostgreSQL, autenticación y WebSockets)
+```
+                      +-----------------------------+
+                      |       Frontend Cliente      |
+                      |  React + Tailwind (UI/Menus)|
+                      |             +               |
+                      |    Phaser.js (Canvas Juego) |
+                      +--------------+--------------+
+                                     |
+           Auth - DB (Permanente)    |   WebSockets (Tiempo real)
+       +-----------------------------+-----------------------------+
+       |                                                           |
+       v                                                           v
++--------------+                                           +---------------+
+|   Supabase   |                                           | Servidor en   |
+| (Auth,       |                                           |   Colyseus    |
+| Usuarios,    |                                           | (Sala, Estado,|                                           
+| Inventory)   |                                           |  Movimiento)  |
++--------------+                                           +---------------+
+```
 
 ## Autores
-- Francisco Pacheco Quevedo
-- Valentín Domínguez Tapia
+- [Francisco Pacheco Quevedo](https://github.com/franpacheco-cpp)
+- [Valentín Domínguez Tapia](https://github.com/elexemsddr)
