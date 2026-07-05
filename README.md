@@ -24,9 +24,11 @@ Para el manejo de base de datos, Web Sockets para la conexión en tiempo real de
 **Backend** (a mejorar):
 - NodeJS
 - C
+
 **Frontend**:
 - React con Vite y TypeScript
 - Phaser
+
 **Base de datos**:
 - Supabase (PostgreSQL, autenticación y WebSockets)
 
