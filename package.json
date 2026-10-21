@@ -4,7 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "typecheck": "bun check"
+    "typecheck": "bun check",
+    "start": "bun run index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",

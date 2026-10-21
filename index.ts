@@ -1,8 +1,10 @@
 import figlet from 'figlet';
+import index from './index.html'; 
+
 const server = Bun.serve({
   port: 22125,
   routes: {
-    "/": () => new Response('ULE - Bun corriendo!'),
+    "/": index,
     "/figlet": () => {
       const body = figlet.textSync('ULE - Bun corriendo!');
       return new Response(body);
